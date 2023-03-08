@@ -1,0 +1,71 @@
+.navBar {
+    width: 100%;
+    height: 75px;
+    background-color: #00FFD1;
+    border-bottom: 2px solid #FF1E1E;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    color: #52616B;
+    top: 75px;
+}
+.title {
+    height: 100%;
+    width: 10%;
+}
+.title a {
+    text-decoration: none;
+}
+.appTitle {
+    font-family: cursive;
+    font-weight: 800;
+    font-size: larger;
+    font-style: italic;
+    color: black;
+}
+.appTitleCaps {
+    color: #FF1E1E;
+}
+.title img {
+    height: 90%;
+    width: auto;
+}
+.links {
+    height: 100%;
+    width: 70%;
+}
+.eachLink, .linkButtons {
+    height: 100%;
+    width: 10%;
+}
+.eachLink a , .linkButtons a{
+    text-decoration: none;
+    color: black;
+}
+.linkButtons a {
+    background-color: white;
+    padding: 10px;
+    color: black;
+    font-weight: 600;
+    border-radius: 2px;
+    transition-duration: 0.3s;
+}
+.linkButtons a:hover {
+    background-color: #afafaf;
+}
+.logout a {
+    color: red;
+}
+.badge {
+    background-color: #FF1E1E;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    color: white;
+    position: absolute;
+    transform: translate(30px, -20px);
+}

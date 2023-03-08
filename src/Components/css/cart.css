@@ -1,0 +1,82 @@
+.cartContainer {
+    width: 100%;
+    height: 100%;
+}
+.cartTableArea {
+    width: 100%;
+    height: 70%;
+    overflow-y: scroll;
+}
+.cartTableArea table {
+    font-size: larger;
+    border-collapse: collapse;
+    width: 90%;
+    text-align: left;
+}
+.cartTableArea table th {
+    border-color: #00FFD1 !important;
+}
+.cartTableArea table th, td {
+    border-bottom: 1px solid white;
+    padding: 10px 10px;
+}
+.cartTableArea table tr td button {
+    outline: none;
+    border: 1px solid #00FFD1;
+    width: 75px;
+    color: white;
+    height: 25px;
+    background-color: transparent;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.noneBorder {
+    border: none !important;
+}
+.checkoutArea {
+    width: 100%;
+}
+.buttonArea {
+    width: 90%;
+}
+.buttonArea button {
+    width: 10%;
+    height: 50px;
+    font-size: larger;
+    margin-right: 10px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 2px;
+}
+.buttonArea button:hover, .buttonArea button:focus  {
+    background-color: #00FFD1;
+    border-color: #00FFD1;
+    color: black;
+    outline: none;
+}
+.totalPriceArea {
+    width: 100%;
+    height: 50px;
+    padding-left: 5%;
+    font-size: larger;
+}
+.crossButton {
+    position: absolute;
+    outline: none;
+    border: none;
+    background-color: #00FFD1;
+    right: -20px;
+    top: -20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.crossButton:hover {
+    background-color: #00b694;
+}

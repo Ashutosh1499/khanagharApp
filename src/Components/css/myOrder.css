@@ -1,0 +1,45 @@
+.myOrdersConatianer {
+    width: 100%;
+    position: relative;
+    top: 75px;
+}
+.dateContainer {
+    width: 100%;
+}
+.dateHrArea {
+    width: 90%;
+}
+.dateArea {
+    width: 150px;
+}
+
+.individualOrderCard {
+    width: 200px;
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 2px;
+    float: left;
+    margin: 25px 0 10px 5%;
+}
+.orderImage {
+    width: 100%;
+    height: 50%;
+}
+.orderImage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2px 2px 0 0;
+    transition-duration: 0.5s;
+}
+.detailsArea {
+    width: 100%;
+    height: 50%;
+}
+.orderDetail,.orderName, .orderPrice {
+    width: 100%;
+    height: 30%;
+}
+.orderName {
+    height: 40% !important;
+}
