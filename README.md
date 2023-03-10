@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Go to backend directory and run - nodemon index.js to start the server.
+
 ## Available Scripts
 
 In the project directory, you can run:
