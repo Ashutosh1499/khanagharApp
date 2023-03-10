@@ -1,17 +1,24 @@
 const express = require('express');
 const app = express();
-const port = 5000;
+const dotenv = require('dotenv');
 const mongoDB = require('./db');
+const cors = require('cors');
 mongoDB();
+dotenv.config();
+
+const BASE_URL = process.env.BASE_URL;
+const port = process.env.PORT || 5000;
 
 app.use((req, res, next) => {
-	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+	res.setHeader('Access-Control-Allow-Origin', `${BASE_URL}`);
 	res.header(
 		'Access-Control-Allow-Headers',
 		'Origin, X-Requested-With, Content-Type, Accept',
 	);
 	next();
 });
+
+app.use(cors());
 
 app.get('/', (req, res) => {
 	res.send('Hi');

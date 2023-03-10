@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+dotenv.config();
 
-const mongoURI =
-	'mongodb+srv://khanaghar:KG2023@cluster0.yucfuju.mongodb.net/khanaghardb?retryWrites=true&w=majority';
+const mongoURI = process.env.CONNECTION_URL;
 
 const mongoDB = async () => {
 	await mongoose

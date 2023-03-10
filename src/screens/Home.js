@@ -9,12 +9,15 @@ export default function Home() {
 	const [foodCat, setFoodCat] = useState([]);
 	const [foodItem, setFoodItem] = useState([]);
 	const loadData = async () => {
-		let response = await fetch('http://localhost:5000/api/foodData', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
+		let response = await fetch(
+			'https://khanagharbackend.onrender.com/api/foodData',
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
 			},
-		});
+		);
 		response = await response.json();
 		setFoodItem(response[0]);
 		setFoodCat(response[1]);

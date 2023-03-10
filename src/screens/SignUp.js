@@ -12,18 +12,21 @@ export default function SignUp() {
 	});
 	const handleSubmit = async e => {
 		e.preventDefault();
-		const response = await fetch('http://localhost:5000/api/createuser', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
+		const response = await fetch(
+			'https://khanagharbackend.onrender.comapi/createuser',
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					name: Credentials.name,
+					email: Credentials.email,
+					password: Credentials.password,
+					location: Credentials.geolocation,
+				}),
 			},
-			body: JSON.stringify({
-				name: Credentials.name,
-				email: Credentials.email,
-				password: Credentials.password,
-				location: Credentials.geolocation,
-			}),
-		});
+		);
 		const json = await response.json();
 		console.log(json);
 

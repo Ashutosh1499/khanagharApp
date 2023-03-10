@@ -7,16 +7,19 @@ export default function Login() {
 	let navigate = useNavigate();
 	const handleLogin = async e => {
 		e.preventDefault();
-		const response = await fetch('http://localhost:5000/api/userlogin', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
+		const response = await fetch(
+			'https://khanagharbackend.onrender.com/api/userlogin',
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					email: Credentials.email,
+					password: Credentials.password,
+				}),
 			},
-			body: JSON.stringify({
-				email: Credentials.email,
-				password: Credentials.password,
-			}),
-		});
+		);
 		const json = await response.json();
 		console.log(json);
 

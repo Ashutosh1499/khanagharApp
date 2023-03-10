@@ -7,9 +7,7 @@ import '../Components/css/myOrder.css';
 export default function MyOrder() {
 	const [orderData, setOrderData] = useState('');
 	const fetchMyOrder = async () => {
-		await fetch('http://localhost:5000/api/myorderData', {
-			// credentials: 'include',
-			// Origin: "http://localhost:3000/login",
+		await fetch('https://khanagharbackend.onrender.com/api/myorderData', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
