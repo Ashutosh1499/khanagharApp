@@ -13,7 +13,7 @@ export default function SignUp() {
 	const handleSubmit = async e => {
 		e.preventDefault();
 		const response = await fetch(
-			'https://khanagharbackend.onrender.comapi/createuser',
+			'https://khanagharbackend.onrender.com/api/createuser',
 			{
 				method: 'POST',
 				headers: {
