@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NavBar from '../Components/NavBar';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -49,39 +50,42 @@ export default function Login() {
 		setCredentials({ ...Credentials, [evt.target.name]: evt.target.value });
 	};
 	return (
-		<div className='logPage'>
-			<div className='pageHeading flexBoxCenter'>
-				<h2>Login</h2>
-			</div>
-			<div className='mainContainer flexBoxCenter'>
-				<div className='logContainer'>
-					<form onSubmit={handleLogin}>
-						<input
-							type='text'
-							placeholder='Email'
-							name='email'
-							value={Credentials.email}
-							onChange={onchange}
-						/>
-						<input
-							type='password'
-							placeholder='Password'
-							name='password'
-							value={Credentials.password}
-							onChange={onchange}
-						/>
-						<button type='submit' className='firstButton'>
-							Login
-						</button>
-						<Link to='/signUp'>
-							<button type='button' className='secondButton'>
-								New user?
+		<>
+			<NavBar />
+			<div className='logPage'>
+				<div className='pageHeading flexBoxCenter'>
+					<h2>Login</h2>
+				</div>
+				<div className='mainContainer flexBoxCenter'>
+					<div className='logContainer'>
+						<form onSubmit={handleLogin}>
+							<input
+								type='text'
+								placeholder='Email'
+								name='email'
+								value={Credentials.email}
+								onChange={onchange}
+							/>
+							<input
+								type='password'
+								placeholder='Password'
+								name='password'
+								value={Credentials.password}
+								onChange={onchange}
+							/>
+							<button type='submit' className='firstButton'>
+								Login
 							</button>
-						</Link>
-						<span className='alertSpan'>{content}</span>
-					</form>
+							<Link to='/signUp'>
+								<button type='button' className='secondButton'>
+									New user?
+								</button>
+							</Link>
+							<span className='alertSpan'>{content}</span>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }

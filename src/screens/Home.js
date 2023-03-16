@@ -18,13 +18,14 @@ export default function Home() {
 				},
 			},
 		);
-		response = await response.json();
+		response = await response.json().then(console);
 		setFoodItem(response[0]);
 		setFoodCat(response[1]);
 	};
 
 	useEffect(() => {
 		loadData();
+		console.log(foodCat);
 	}, []);
 
 	return (
@@ -49,45 +50,47 @@ export default function Home() {
 				</div>
 				<div className='allItemsContainer flexBoxCenter'>
 					<div className='allItemCards'>
-						{foodCat !== []
-							? foodCat.map(data => {
-									return (
-										<div className='indCat' key={data._id}>
-											<div className='categoryName flexBoxJustifyStart'>
-												<h2>{data.CategoryName}</h2>
-											</div>
-											<hr />
-											<div className='indCatCards'>
-												{foodItem !== [] ? (
-													foodItem
-														.filter(
-															item =>
-																item.CategoryName === data.CategoryName &&
-																(item.name
-																	.toLowerCase()
-																	.includes(search.toLowerCase()) ||
-																	item.description
-																		.toLowerCase()
-																		.includes(search.toLowerCase())),
-														)
-														.map(filterItems => {
-															return (
-																<div key={filterItems._id}>
-																	<Card
-																		foodItem={filterItems}
-																		options={filterItems.options[0]}
-																	/>
-																</div>
-															);
-														})
-												) : (
-													<div> No such data </div>
-												)}
-											</div>
+						{foodCat !== [] ? (
+							foodCat.map(data => {
+								return (
+									<div className='indCat' key={data._id}>
+										<div className='categoryName flexBoxJustifyStart'>
+											<h2>{data.CategoryName}</h2>
 										</div>
-									);
-							  })
-							: ''}
+										<hr />
+										<div className='indCatCards'>
+											{foodItem !== [] ? (
+												foodItem
+													.filter(
+														item =>
+															item.CategoryName === data.CategoryName &&
+															(item.name
+																.toLowerCase()
+																.includes(search.toLowerCase()) ||
+																item.description
+																	.toLowerCase()
+																	.includes(search.toLowerCase())),
+													)
+													.map(filterItems => {
+														return (
+															<div key={filterItems._id}>
+																<Card
+																	foodItem={filterItems}
+																	options={filterItems.options[0]}
+																/>
+															</div>
+														);
+													})
+											) : (
+												<div> No such data </div>
+											)}
+										</div>
+									</div>
+								);
+							})
+						) : (
+							<>Fetching data from the server</>
+						)}
 					</div>
 				</div>
 			</div>
