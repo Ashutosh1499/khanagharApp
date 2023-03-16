@@ -25,7 +25,6 @@ export default function Home() {
 
 	useEffect(() => {
 		loadData();
-		console.log(foodCat);
 	}, []);
 
 	return (
