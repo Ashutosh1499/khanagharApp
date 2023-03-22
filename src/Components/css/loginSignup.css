@@ -34,7 +34,6 @@
 .logContainer form button {
     width: 25%;
     height: 50px;
-    font-size: larger;
     margin-right: 10px;
     background-color: transparent;
     color: white;
@@ -69,4 +68,12 @@
 .alertSpan {
     color: red;
     font-style: italic;
+}
+@media screen and (max-width: 750px) {
+    .logContainer form button, .logContainer a{
+        font-size: xx-small;
+        width: 45%;
+        height: 40px;
+        margin-right: 5px;
+    }
 }

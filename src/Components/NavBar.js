@@ -34,31 +34,33 @@ export default function NavBar() {
 					</Link>
 				</div>
 				<div className='links flexBoxJustifyStart'>
-					<div className='eachLink flexBoxCenter boldText'>
+					<div className='eachLink flexBoxCenter'>
 						<Link to='/'>
 							<h3>Home</h3>
 						</Link>
 					</div>
 					{localStorage.getItem('authToken') ? (
-						<div className='linkButtons flexBoxCenter'>
-							<Link to='/myOrder'>My Orders</Link>
+						<div className='eachLink flexBoxCenter'>
+							<Link to='/myOrder'>
+								<h3>History</h3>
+							</Link>
 						</div>
 					) : (
 						''
 					)}
 				</div>
 				{!localStorage.getItem('authToken') ? (
-					<>
-						<div className='linkButtons lin flexBoxJustifyEnd'>
+					<div className='linkButtons flexBoxJustifyEnd'>
+						<div className='linkButton lin flexBoxJustifyEnd'>
 							<Link to='/login'>Login</Link>
 						</div>
-						<div className='linkButtons lout flexBoxCenter'>
+						<div className='linkButton lout flexBoxCenter'>
 							<Link to='/signUp'>SignUp</Link>
 						</div>
-					</>
+					</div>
 				) : (
-					<>
-						<div className='linkButtons cart flexBoxJustifyEnd'>
+					<div className='linkButtons flexBoxJustifyEnd'>
+						<div className='linkButton cart flexBoxJustifyEnd'>
 							<Link
 								to='/'
 								className='flexBoxCenter'
@@ -76,7 +78,7 @@ export default function NavBar() {
 								<Cart />
 							</Modal>
 						) : null}
-						<div className='linkButtons logout flexBoxCenter'>
+						<div className='linkButton logout flexBoxCenter'>
 							<Link
 								to='/'
 								onClick={() => {
@@ -87,7 +89,7 @@ export default function NavBar() {
 								Logout
 							</Link>
 						</div>
-					</>
+					</div>
 				)}
 			</div>
 		</div>

@@ -32,11 +32,14 @@
 }
 .links {
     height: 100%;
-    width: 70%;
+    width: 50%;
 }
-.eachLink, .linkButtons {
+.linkButtons {
     height: 100%;
-    width: 10%;
+    width: 40%;
+}
+.linkButton {
+    width: 20%;
 }
 .eachLink a , .linkButtons a{
     text-decoration: none;
@@ -69,10 +72,8 @@
     .appTitleSmalls {
         display: none;
     }
-    .eachLink, .linkButtons {
-        width: 25%;
-    }
-    .lin, .lout {
-        width: 10% !important;
+    .linkButton {
+        width: 30%;
+        font-size: x-small;
     }
 }
