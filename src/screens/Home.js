@@ -3,6 +3,7 @@ import NavBar from '../Components/NavBar';
 import Card from '../Components/Card';
 import Footer from '../Components/Footer';
 import '../Components/css/home.css';
+import loadingImage from '../Components/Icons/loadicon.png';
 
 export default function Home() {
 	const [search, setSearch] = useState('');
@@ -24,8 +25,9 @@ export default function Home() {
 	};
 
 	useEffect(() => {
+		document.title = 'KhanaGhar';
 		loadData();
-	}, []);
+	}, [foodCat]);
 
 	return (
 		<>
@@ -49,7 +51,7 @@ export default function Home() {
 				</div>
 				<div className='allItemsContainer flexBoxCenter'>
 					<div className='allItemCards'>
-						{foodCat !== [] ? (
+						{foodCat !== null && foodCat.length !== 0 ? (
 							foodCat.map(data => {
 								return (
 									<div className='indCat' key={data._id}>
@@ -88,7 +90,13 @@ export default function Home() {
 								);
 							})
 						) : (
-							<>Fetching data from the server</>
+							<>
+								<div
+									className='laodingAnimation flexBoxCenter'
+									style={{ width: '100%', height: '150px' }}>
+									<img src={loadingImage} alt='' />
+								</div>
+							</>
 						)}
 					</div>
 				</div>

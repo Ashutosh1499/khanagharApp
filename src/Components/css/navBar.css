@@ -30,10 +30,6 @@
 .appTitleCaps {
     color: #FF1E1E;
 }
-.title img {
-    height: 90%;
-    width: auto;
-}
 .links {
     height: 100%;
     width: 70%;
@@ -68,4 +64,15 @@
     color: white;
     position: absolute;
     transform: translate(30px, -20px);
+}
+@media screen and (max-width: 720px) {
+    .appTitleSmalls {
+        display: none;
+    }
+    .eachLink, .linkButtons {
+        width: 25%;
+    }
+    .lin, .lout {
+        width: 10% !important;
+    }
 }

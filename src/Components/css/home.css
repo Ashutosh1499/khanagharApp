@@ -96,3 +96,22 @@ hr {
     position: relative;
     top: 75px;
 }
+.laodingAnimation img {
+    width: 50px;
+    animation: loadingAnimation 2s infinite linear;
+}
+
+@keyframes loadingAnimation
+{
+    0% {
+        transform: rotate(0deg);
+    }   
+    
+    50% {
+        transform: rotate(180deg);
+    }   
+    
+    100% {
+        transform: rotate(360deg);
+    }   
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from '../Components/NavBar';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -49,6 +49,9 @@ export default function Login() {
 	const onchange = evt => {
 		setCredentials({ ...Credentials, [evt.target.name]: evt.target.value });
 	};
+	useEffect(() => {
+		document.title = 'KG | Login';
+	});
 	return (
 		<>
 			<NavBar />

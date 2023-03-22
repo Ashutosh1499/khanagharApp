@@ -27,9 +27,9 @@ export default function NavBar() {
 					<Link to='/'>
 						<span className='appTitle'>
 							<span className='appTitleCaps'>K</span>
-							<span>hana</span>
+							<span className='appTitleSmalls'>hana</span>
 							<span className='appTitleCaps'>G</span>
-							<span>har</span>
+							<span className='appTitleSmalls'>har</span>
 						</span>
 					</Link>
 				</div>
@@ -49,10 +49,10 @@ export default function NavBar() {
 				</div>
 				{!localStorage.getItem('authToken') ? (
 					<>
-						<div className='linkButtons flexBoxJustifyEnd'>
+						<div className='linkButtons lin flexBoxJustifyEnd'>
 							<Link to='/login'>Login</Link>
 						</div>
-						<div className='linkButtons flexBoxCenter'>
+						<div className='linkButtons lout flexBoxCenter'>
 							<Link to='/signUp'>SignUp</Link>
 						</div>
 					</>

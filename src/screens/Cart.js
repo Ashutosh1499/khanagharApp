@@ -16,24 +16,26 @@ export default function Cart() {
 	const handleCheckOut = async () => {
 		let userEmail = localStorage.getItem('userEmail');
 		console.log('from cart.js', userEmail);
-		let response = await fetch('https://khanagharbackend.onrender.com/api/orderData', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
+		let response = await fetch(
+			'https://khanagharbackend.onrender.com/api/orderData',
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					order_data: data,
+					email: userEmail,
+					order_date: new Date().toDateString(),
+				}),
 			},
-			body: JSON.stringify({
-				order_data: data,
-				email: userEmail,
-				order_date: new Date().toDateString(),
-			}),
-		});
+		);
 		console.log('Order respone:', response.status);
 		if (response.status === 200) {
 			dispatch({ type: 'DROP' });
 		}
 	};
 	let totalPrice = data.reduce((total, food) => total + food.price, 0);
-
 	return (
 		<div className='cartContainer'>
 			<div className='pageHeading flexBoxCenter'>

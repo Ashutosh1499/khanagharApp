@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from '../Components/NavBar';
 import '../Components/css/loginSignup.css';
 import { Link, useNavigate } from 'react-router-dom';
@@ -41,6 +41,9 @@ export default function SignUp() {
 	const onchange = evt => {
 		setCredentials({ ...Credentials, [evt.target.name]: evt.target.value });
 	};
+	useEffect(() => {
+		document.title = 'KG | SignUp';
+	});
 	return (
 		<>
 			<NavBar />
