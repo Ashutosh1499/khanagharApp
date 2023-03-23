@@ -41,6 +41,9 @@
 .linkButton {
     width: 20%;
 }
+.eachLink {
+    width: 10%;
+}
 .eachLink a , .linkButtons a{
     text-decoration: none;
     color: black;
