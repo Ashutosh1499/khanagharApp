@@ -100,7 +100,12 @@ hr {
     width: 50px;
     animation: loadingAnimation 2s infinite linear;
 }
-
+.waitMessage {
+    width: 100%;
+}
+.hidden {
+    display: none;
+}
 @keyframes loadingAnimation
 {
     0% {

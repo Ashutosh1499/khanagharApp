@@ -9,6 +9,7 @@ export default function Home() {
 	const [search, setSearch] = useState('');
 	const [foodCat, setFoodCat] = useState([]);
 	const [foodItem, setFoodItem] = useState([]);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const loadData = async () => {
 		let response = await fetch(
 			'https://khanagharbackend.onrender.com/api/foodData',
@@ -19,15 +20,19 @@ export default function Home() {
 				},
 			},
 		);
-		response = await response.json().then(console);
+		response = await response.json();
 		setFoodItem(response[0]);
 		setFoodCat(response[1]);
+		if (foodCat === null) {
+			console.log('yess');
+			window.location.reload(false);
+		}
 	};
 
 	useEffect(() => {
 		document.title = 'KhanaGhar';
 		loadData();
-	}, [foodCat]);
+	}, [loadData]);
 
 	return (
 		<>
@@ -95,6 +100,9 @@ export default function Home() {
 									className='laodingAnimation flexBoxCenter'
 									style={{ width: '100%', height: '150px' }}>
 									<img src={loadingImage} alt='' />
+								</div>
+								<div className='waitMessage flexBoxCenter'>
+									<h3>Please wait while we fetch data from the server.</h3>
 								</div>
 							</>
 						)}
