@@ -22,8 +22,8 @@ export default function NavBar() {
 	}, [data.length, numberOfItems]);
 	return (
 		<div className='navBar'>
-			<div className='container flexBoxJustifySpaceBetween'>
-				<div className='title flexBoxCenter'>
+			<div className='container fb ac jsb'>
+				<div className='title fb ac jc'>
 					<Link to='/'>
 						<span className='appTitle'>
 							<span className='appTitleCaps'>K</span>
@@ -33,64 +33,68 @@ export default function NavBar() {
 						</span>
 					</Link>
 				</div>
-				<div className='links flexBoxJustifyStart'>
-					<div className='eachLink flexBoxCenter'>
-						<Link to='/'>
-							<h3>Home</h3>
-						</Link>
-					</div>
-					{localStorage.getItem('authToken') ? (
-						<div className='eachLink flexBoxCenter'>
-							<Link to='/myOrder'>
-								<h3>History</h3>
+				<div className='navLinks fb ac jc'>
+					<div className='plainLinks fb'>
+						<div className='eachLink fb ac jc'>
+							<Link to='/'>
+								<h3>Home</h3>
 							</Link>
 						</div>
-					) : (
-						''
-					)}
+						{localStorage.getItem('authToken') ? (
+							<div className='eachLink fb ac jc'>
+								<Link to='/myOrder'>
+									<h3>History</h3>
+								</Link>
+							</div>
+						) : (
+							''
+						)}
+					</div>
+					<div className='buttonLinks fb ac jfe'>
+						{!localStorage.getItem('authToken') ? (
+							<>
+								<div className='linkButtons lin fb ac jfe'>
+									<Link to='/login'>Login</Link>
+								</div>
+								<div className='linkButtons lout fb ac jc'>
+									<Link to='/signUp'>SignUp</Link>
+								</div>
+							</>
+						) : (
+							<>
+								<div className='linkButtons cart fb ac jfe'>
+									<Link
+										to='/'
+										className='fb ac jc'
+										onClick={() => setCartView(true)}>
+										Cart &nbsp;
+										<span
+											className='badge fb ac jc'
+											style={{ display: `${none}` }}>
+											{numberOfItems}
+										</span>
+									</Link>
+								</div>
+								{cartView ? (
+									<Modal onClose={() => setCartView(false)}>
+										<Cart />
+									</Modal>
+								) : null}
+								<div className='linkButtons logout fb ac jc'>
+									<Link
+										to='/'
+										onClick={() => {
+											localStorage.setItem('authToken', '');
+											localStorage.setItem('userEmail', '');
+											window.location.reload(false);
+										}}>
+										Logout
+									</Link>
+								</div>
+							</>
+						)}
+					</div>
 				</div>
-				{!localStorage.getItem('authToken') ? (
-					<div className='linkButtons flexBoxJustifyEnd'>
-						<div className='linkButton lin flexBoxJustifyEnd'>
-							<Link to='/login'>Login</Link>
-						</div>
-						<div className='linkButton lout flexBoxCenter'>
-							<Link to='/signUp'>SignUp</Link>
-						</div>
-					</div>
-				) : (
-					<div className='linkButtons flexBoxJustifyEnd'>
-						<div className='linkButton cart flexBoxJustifyEnd'>
-							<Link
-								to='/'
-								className='flexBoxCenter'
-								onClick={() => setCartView(true)}>
-								Cart &nbsp;
-								<span
-									className='badge flexBoxCenter'
-									style={{ display: `${none}` }}>
-									{numberOfItems}
-								</span>
-							</Link>
-						</div>
-						{cartView ? (
-							<Modal onClose={() => setCartView(false)}>
-								<Cart />
-							</Modal>
-						) : null}
-						<div className='linkButton logout flexBoxCenter'>
-							<Link
-								to='/'
-								onClick={() => {
-									localStorage.setItem('authToken', '');
-									localStorage.setItem('userEmail', '');
-									window.location.reload(false);
-								}}>
-								Logout
-							</Link>
-						</div>
-					</div>
-				)}
 			</div>
 		</div>
 	);

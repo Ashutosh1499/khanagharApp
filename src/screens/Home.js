@@ -3,7 +3,7 @@ import NavBar from '../Components/NavBar';
 import Card from '../Components/Card';
 import Footer from '../Components/Footer';
 import '../Components/css/home.css';
-import loadingImage from '../Components/Icons/loadicon.png';
+import { CircularProgress } from '@mui/material';
 
 export default function Home() {
 	const [search, setSearch] = useState('');
@@ -24,7 +24,6 @@ export default function Home() {
 		setFoodItem(response[0]);
 		setFoodCat(response[1]);
 		if (foodCat === null) {
-			console.log('yess');
 			window.location.reload(false);
 		}
 	};
@@ -38,9 +37,9 @@ export default function Home() {
 		<>
 			<NavBar />
 			<div className='homeContents'>
-				<div className='homeImage flexBoxAlignEnd'>
+				<div className='homeImage fb afe jc'>
 					<div className='searchBar'>
-						<form className='searchBarForm flexBoxSpaceAround'>
+						<form className='searchBarForm fb ac jsa'>
 							<input
 								type='search'
 								name='searchBar'
@@ -54,13 +53,13 @@ export default function Home() {
 						</form>
 					</div>
 				</div>
-				<div className='allItemsContainer flexBoxCenter'>
+				<div className='allItemsContainer fb ac jc'>
 					<div className='allItemCards'>
 						{foodCat !== null && foodCat.length !== 0 ? (
 							foodCat.map(data => {
 								return (
 									<div className='indCat' key={data._id}>
-										<div className='categoryName flexBoxJustifyStart'>
+										<div className='categoryName fb ac jfs'>
 											<h2>{data.CategoryName}</h2>
 										</div>
 										<hr />
@@ -97,11 +96,11 @@ export default function Home() {
 						) : (
 							<>
 								<div
-									className='laodingAnimation flexBoxCenter'
+									className='laodingAnimation fb ac jc'
 									style={{ width: '100%', height: '150px' }}>
-									<img src={loadingImage} alt='' />
+									<CircularProgress color='inherit' />
 								</div>
-								<div className='waitMessage flexBoxCenter'>
+								<div className='waitMessage fb ac jc'>
 									<h3>Please wait while we fetch data from the server.</h3>
 								</div>
 							</>

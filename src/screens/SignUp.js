@@ -48,10 +48,10 @@ export default function SignUp() {
 		<>
 			<NavBar />
 			<div className='logPage'>
-				<div className='pageHeading flexBoxCenter'>
+				<div className='pageHeading fb ac jc'>
 					<h2>Sign Up</h2>
 				</div>
-				<div className='mainContainer flexBoxCenter'>
+				<div className='mainContainer fb ac jc'>
 					<div className='logContainer'>
 						<form onSubmit={handleSubmit}>
 							<input

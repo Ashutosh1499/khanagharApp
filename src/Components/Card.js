@@ -82,13 +82,13 @@ export default function Card(props) {
 				<img src={foodItem.img} alt='' />
 			</div>
 			<div className='itemInfo'>
-				<div className='itemName flexBoxJustifyStart'>
+				<div className='itemName fb ac jfs'>
 					<h3>{foodItem.name}</h3>
 				</div>
 				<div className='itemDetail'>{foodItem.description}</div>
 			</div>
-			<div className='itemInput flexBoxSpaceAround'>
-				<div className='itemSize flexBoxCenter'>
+			<div className='itemInput fb ac jsa'>
+				<div className='itemSize fb ac jc'>
 					<select
 						name='itemSize'
 						id='itemSize'
@@ -103,9 +103,9 @@ export default function Card(props) {
 						})}
 					</select>
 				</div>
-				<div className='itemQuantity flexBoxSpaceAround'>
+				<div className='itemQuantity fb ac jsa'>
 					<div
-						className='quanButton flexBoxCenter hover'
+						className='quanButton fb ac jc hover'
 						onClick={() => {
 							if (qValue > 0) {
 								setQValue(qValue - 1);
@@ -114,9 +114,9 @@ export default function Card(props) {
 						}}>
 						-
 					</div>
-					<div className='displayQuantity flexBoxCenter'>{qValue}</div>
+					<div className='displayQuantity fb ac jc'>{qValue}</div>
 					<div
-						className='quanButton flexBoxCenter hover'
+						className='quanButton fb ac jc hover'
 						onClick={() => {
 							if (qValue < foodItem.limit) {
 								setQValue(qValue + 1);
@@ -127,10 +127,10 @@ export default function Card(props) {
 					</div>
 				</div>
 			</div>
-			<div className='addToCart flexBoxCenter'>
-				<div className='priceUpdate flexBoxCenter'>₹{totalPrice}/-</div>
-				<div className='atcButtonArea flexBoxCenter'>
-					<button className='hover flexBoxCenter' onClick={handleAddToCart}>
+			<div className='addToCart fb ac jc'>
+				<div className='priceUpdate fb ac jc'>₹{totalPrice}/-</div>
+				<div className='atcButtonArea fb ac jc'>
+					<button className='hover fb ac jc' onClick={handleAddToCart}>
 						<img src={cartImage} alt='' />
 					</button>
 				</div>

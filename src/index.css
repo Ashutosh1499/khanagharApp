@@ -4,22 +4,49 @@ body {
     background-color: #1E2022;
     color: white;
 }
-.flexBoxCenter {
+.fb {
+    display: flex;
+}
+.ac {
+    align-items: center;
+}
+.afe {
+    align-items: flex-end;
+}
+.afs {
+    align-items: flex-start;
+}
+.jc {
+    justify-content: center;
+}
+.jsa {
+    justify-content: space-around;
+}
+.jsb {
+    justify-content: space-between;
+}
+.jfe {
+    justify-content: flex-end;
+}
+.jfs {
+    justify-content: flex-start;
+}
+.fb ac jc {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.flexBoxJustifyStart {
+.fb ac jfs {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.flexBoxAlignEnd {
+.fb afe jc {
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
-.flexBoxSpaceAround {
+.fb ac jsa {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -29,12 +56,12 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-.flexBoxJustifyStart {
+.fb ac jfs {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.flexBoxJustifyEnd {
+.fb ac jfe {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -42,7 +69,7 @@ body {
 .boldText {
     font-weight: 800;
 }
-.flexBoxJustifySpaceBetween {
+.fb ac jsb {
     display: flex;
     align-items: center;
     justify-content: space-between;

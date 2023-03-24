@@ -8,7 +8,7 @@ export default function Cart() {
 	let dispatch = useDispatchCart();
 	if (data.length === 0) {
 		return (
-			<div className='flexBoxCenter' style={{ marginTop: '25px' }}>
+			<div className='fb ac jc' style={{ marginTop: '25px' }}>
 				<div>Your cart is Empty</div>
 			</div>
 		);
@@ -38,10 +38,10 @@ export default function Cart() {
 	let totalPrice = data.reduce((total, food) => total + food.price, 0);
 	return (
 		<div className='cartContainer'>
-			<div className='pageHeading flexBoxCenter'>
+			<div className='pageHeading fb ac jc'>
 				<h2>Cart</h2>
 			</div>
-			<div className='cartTableArea flexBoxAlignStart'>
+			<div className='cartTableArea fb ac jsa'>
 				<table>
 					<thead>
 						<tr>
@@ -76,11 +76,11 @@ export default function Cart() {
 					</tbody>
 				</table>
 			</div>
-			<div className='totalPriceArea flexBoxJustifyStart'>
+			<div className='totalPriceArea fb ac jfs'>
 				<span>{totalPrice}</span>
 				/-
 			</div>
-			<div className='checkoutArea flexBoxCenter'>
+			<div className='checkoutArea fb ac jc'>
 				<div className='buttonArea'>
 					<button onClick={handleCheckOut}>Checkout</button>
 				</div>

@@ -29,7 +29,7 @@ export default function MyOrder() {
 		<>
 			<NavBar />
 			<div className='myOrdersConatianer'>
-				<div className='heading flexBoxCenter'>
+				<div className='heading fb ac jc'>
 					<h3>Your order history</h3>
 				</div>
 				{orderData !== null && orderData !== {} ? (
@@ -45,8 +45,8 @@ export default function MyOrder() {
 												<>
 													{arrayData.Order_date ? (
 														<>
-															<div className='dateContainer flexBoxCenter'>
-																<div className='dateHrArea flexBoxCenter'>
+															<div className='dateContainer fb ac jc'>
+																<div className='dateHrArea fb ac jc'>
 																	<div className='dateArea'>
 																		{arrayData.Order_date}
 																	</div>
@@ -63,15 +63,15 @@ export default function MyOrder() {
 																<div
 																	className='detailsArea'
 																	style={{ paddingLeft: '5px' }}>
-																	<div className='orderDetail flexBoxJustifyStart'>
+																	<div className='orderDetail fb ac jfs'>
 																		{arrayData.qty + ' ' + arrayData.size}
 																	</div>
-																	<div className='orderName flexBoxJustifyStart'>
+																	<div className='orderName fb ac jfs'>
 																		<h3 style={{ margin: '0' }}>
 																			{arrayData.fName}
 																		</h3>
 																	</div>
-																	<div className='orderPrice flexBoxJustifyStart'>
+																	<div className='orderPrice fb ac jfs'>
 																		{arrayData.price}
 																	</div>
 																</div>
@@ -87,7 +87,7 @@ export default function MyOrder() {
 				) : (
 					<>
 						<div
-							className='laodingAnimation flexBoxCenter'
+							className='laodingAnimation fb ac jc'
 							style={{ width: '100%', height: '50px' }}>
 							<img src={loadingImage} alt='' />
 						</div>
