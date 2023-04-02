@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '../Components/NavBar';
 import Card from '../Components/Card';
+import LoadingCards from '../Components/LoadingCards';
 import Footer from '../Components/Footer';
 import '../Components/css/home.css';
-import { CircularProgress } from '@mui/material';
 
 export default function Home() {
 	const [search, setSearch] = useState('');
@@ -94,16 +94,16 @@ export default function Home() {
 								);
 							})
 						) : (
-							<>
-								<div
-									className='laodingAnimation fb ac jc'
-									style={{ width: '100%', height: '150px' }}>
-									<CircularProgress color='inherit' />
+							<div className='allItemCards'>
+								<div className='categoryName fb ac jfs'>
+									<h2>Loading</h2>
 								</div>
-								<div className='waitMessage fb ac jc'>
-									<h3>Please wait while we fetch data from the server.</h3>
-								</div>
-							</>
+								<hr />
+								<LoadingCards />
+								<LoadingCards />
+								<LoadingCards />
+								<LoadingCards />
+							</div>
 						)}
 					</div>
 				</div>
