@@ -95,14 +95,26 @@ export default function Home() {
 							})
 						) : (
 							<div className='allItemCards'>
-								<div className='categoryName fb ac jfs'>
-									<h2>Loading</h2>
+								<div className='indCat'>
+									<div className='categoryName fb ac jfs'>
+										<h2>Loading</h2>
+									</div>
+									<hr />
+									<div className='indCatCards'>
+										<div>
+											<LoadingCards />
+										</div>
+										<div>
+											<LoadingCards />
+										</div>
+										<div>
+											<LoadingCards />
+										</div>
+										<div>
+											<LoadingCards />
+										</div>
+									</div>
 								</div>
-								<hr />
-								<LoadingCards />
-								<LoadingCards />
-								<LoadingCards />
-								<LoadingCards />
 							</div>
 						)}
 					</div>
